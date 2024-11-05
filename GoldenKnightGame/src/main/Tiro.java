@@ -1,3 +1,4 @@
+package main;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
@@ -8,8 +9,8 @@ public class Tiro {
 	private int altura, largura;
 	private boolean isVisivel;
 	
-	private static final int LARGURA = 938;
-	private static int VELOCIDADE 	= 2;
+	private static final int LARGURA = 1450;
+	private static int VELOCIDADE 	= 20   ;
 	
 	public Tiro(int x, int y) {
 		this.x = x;
@@ -18,7 +19,7 @@ public class Tiro {
 	}
 	
 	public void load() {
-		ImageIcon referencia = new ImageIcon("src/images/spritebolafogo.png");
+		ImageIcon referencia = new ImageIcon("src/images/spriteselementos/spritebolafogo.png");
 		imagem = referencia.getImage();
 		
 		this.largura = imagem.getWidth(null);

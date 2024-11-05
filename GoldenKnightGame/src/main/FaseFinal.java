@@ -1,4 +1,6 @@
+package main;
 import java.awt.Graphics;
+import entities.Player;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,21 +13,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Fase extends JPanel implements ActionListener {
+public class FaseFinal extends JPanel implements ActionListener {
 
 	private Image fundo;
 	private Player player;
 	private Timer timer;
 
-	public Fase() {
+	public FaseFinal() {
 		setFocusable(true);
 		setDoubleBuffered(true);
 
 		ImageIcon referencia = new ImageIcon("src/images/backgroundfinal.jpg");
 		fundo = referencia.getImage();
 
-		player = new Player();
-		player.load();
+		player = new Player(200,200);
 
 		addKeyListener(new TecladoAdapter());
 
@@ -50,7 +51,6 @@ public class Fase extends JPanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		player.update();
 
 		List<Tiro> tiros = player.getTiros();
